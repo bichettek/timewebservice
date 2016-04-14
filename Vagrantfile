@@ -28,17 +28,15 @@ Vagrant.configure(2) do |config|
   config.vm.provider "virtualbox" do |vb|
      # Display the VirtualBox GUI when booting the machine
      vb.gui = true
-	 
-	 vb.name = "TimeWebService"
-  
+     vb.name = "TimeWebService"
      # Customize the amount of memory on the VM:
      vb.memory = "1024"
   end
   
   # Configuration for french keyboards
   config.vm.provision :file do |file|
-    file.source      = 'provision/keyboard'
-    file.destination = '/etc/sysconfig/keyboard'
+     file.source      = 'provision/keyboard'
+     file.destination = '/etc/sysconfig/keyboard'
   end
   
 
@@ -47,27 +45,15 @@ Vagrant.configure(2) do |config|
   # documentation for more information about their specific syntax and use.
 
   config.vm.provision :file do |file|
-    file.source      = 'timewebservice'
-    file.destination = '/opt/timewebservice'
+     file.source      = 'timewebservice'
+     file.destination = '/opt/timewebservice'
   end
   
   # puppet.environment and puppet.environment_path mandatory for puppet 4.0 and above. 
   config.vm.provision "puppet" do |puppet|
-	puppet.environment_path = "environments"
-    puppet.environment = "TimeWebService"
-    #puppet.manifest_file = "site.pp"
-	#puppet.module_path = "modules"
+     puppet.environment_path = "environments"
+     puppet.environment = "TimeWebService"
   end
-  
 
- 
-  
-  #config.vm.provision "shell", inline: <<-SHELL
-	#cd /opt/timewebservice/
-	#ruby /opt/timewebservice/local.rb
-	#reboot to load keyboard configuration 
-	#reboot
-	#service network restart
-  #SHELL
-  
+
 end
