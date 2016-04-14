@@ -1,0 +1,4 @@
+KEYTABLE="fr"
+MODEL="pc105+inet"
+LAYOUT="fr"
+KEYBOARDTYPE="pc"
