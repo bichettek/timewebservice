@@ -16,9 +16,12 @@ username : root
 
 password : puppet
 
+#Webservice Test
+
+wget localhost/utc/now -o /tmp/test.now
+
 #Webservice usage 
 Examples
-
 
 /utc/now → Current UTC time
 
