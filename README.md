@@ -17,8 +17,13 @@ username : root
 password : puppet
 
 #Webservice Test
-
+Case 1, from your guest : 
 wget localhost/utc/now -o /tmp/test.now
+
+Case 2, from your host : 
+- Disable the firewall (root user) : service iptables stop
+- Add port forwarding in your VirtualBox VM configuration, for exemple forward port 80 from guest to port 8080 in your host.
+- Test from tour favorite browser : localhost:8080/utc/now
 
 #Webservice usage 
 Examples
