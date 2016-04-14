@@ -7,9 +7,28 @@ You will need VirtualBox and vagrant on your host machine.
 
 #Usage
 Within the path of Vagrantfile simply run : 
+
 vagrant up
 
 Vagrant will provide the ruby files corresponding to the timewebservice app and will provision ruby, rubygems, gems into the vm through puppet. 
+
+NB : If atlas is unvailable, you can download the box from : https://www.dropbox.com/sh/un3oin47nuu93nk/AABXqpxvUZ10d9qu54_Yd1mQa?dl=0
+
+You will need to add the box to your vagrant local boxes with for exemple : 
+
+vagrant box add centos-6.6-64-puppet.box --name centos-6.6-64-puppet
+
+
+In a second time, you need to change the VagrantFile from 
+
+config.vm.box = "puppetlabs/centos-6.6-64-puppet" 
+
+
+to 
+
+
+ config.vm.box = "centos-6.6-64-puppet"
+
 
 #Credentials
 username : root
